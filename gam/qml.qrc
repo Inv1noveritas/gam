@@ -2,5 +2,9 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>Gameplay.qml</file>
+        <file>Setting.qml</file>
+        <file>Character.qml</file>
+        <file>Music.qml</file>
+        <file>Control.qml</file>
     </qresource>
 </RCC>

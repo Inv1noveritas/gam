@@ -4,7 +4,6 @@ import QtQuick.Controls 2.12
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Layouts 1.1
 
-
 ApplicationWindow {
     id:w
     visible: true
@@ -33,8 +32,6 @@ Rectangle {
 
     }
 }
-
-
 
 Button {
     id: control
@@ -100,6 +97,39 @@ Button {
 
 }
 
+Button {
+    id: con
+    text: qsTr("Настройки")
+
+    width: 90
+    height: 40
+
+    font.pointSize: 8
+
+    y:0
+    x:0
+
+    contentItem: Text {
+        text: con.text
+        font: con.font
+        color: "White"
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        elide: Text.ElideRight
+    }
+
+    background: Rectangle {
+        implicitWidth: 90
+        implicitHeight: 40
+        color: "transparent"
+    }
+
+    onClicked: {
+        secondWindow.show()
+        w.hide()
+           }
+
+}
 
 
 Gameplay {
@@ -111,4 +141,17 @@ Gameplay {
            w.show()
        }
    }
+
+Setting {
+       id: secondWindow
+     flags: Qt.FramelessWindowHint
+
+       onSignalExit: {
+           secondWindow.close()
+           w.show()
+       }
+   }
+
+
+
 }
